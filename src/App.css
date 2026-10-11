@@ -1,0 +1,1883 @@
+/* ==================================================
+   CONFIGURAÇÃO GERAL
+================================================== */
+
+#root {
+  min-height: 100vh;
+}
+
+/* ==================================================
+   CABEÇALHO E NAVEGAÇÃO
+================================================== */
+
+.cabecalho {
+  min-height: 80px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  color: var(--texto);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.simbolo {
+  margin-right: 10px;
+  color: var(--destaque);
+}
+
+.cabecalho nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.cabecalho nav a {
+  color: var(--texto-secundario);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cabecalho nav a:hover {
+  color: var(--destaque);
+}
+
+/* ==================================================
+   BOTÃO DE TEMA
+================================================== */
+
+.botao-tema {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  background: var(--cartao);
+  color: var(--texto);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.botao-tema:hover {
+  border-color: var(--destaque);
+}
+
+/* ==================================================
+   APRESENTAÇÃO PRINCIPAL
+================================================== */
+
+.apresentacao {
+  padding: 100px 20px 110px;
+  text-align: center;
+  background: radial-gradient(ellipse at top, var(--brilho), transparent 65%);
+}
+
+.etiqueta {
+  color: var(--destaque);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.apresentacao h1 {
+  margin: 24px 0;
+  color: var(--texto);
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  line-height: 1.15;
+}
+
+.apresentacao h1 span {
+  color: var(--destaque);
+}
+
+.descricao {
+  max-width: 580px;
+  margin: 0 auto 30px;
+  color: var(--texto-secundario);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ==================================================
+   BOTÕES PRINCIPAIS
+================================================== */
+
+.botao-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 14px 24px;
+  border: 1px solid var(--destaque);
+  border-radius: 8px;
+  background: var(--destaque);
+  color: #17121f;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.botao-principal:hover {
+  transform: translateY(-3px);
+  background: var(--destaque);
+  color: #17121f;
+  box-shadow: 0 5px 16px rgba(216, 180, 106, 0.2);
+}
+
+.botao-principal:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 4px;
+}
+
+/* ==================================================
+   COLEÇÃO DE CRIATURAS
+================================================== */
+
+.colecao {
+  padding: 40px 7% 90px;
+}
+
+.titulo-secao {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.titulo-secao .etiqueta {
+  margin-bottom: 10px;
+}
+
+.titulo-secao h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.contador,
+.origem {
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+}
+
+/* ==================================================
+   BOTÃO DE CADASTRO
+================================================== */
+
+.acoes-colecao {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.acoes-colecao .botao-principal {
+  min-width: 170px;
+  min-height: 44px;
+  padding: 12px 20px;
+  white-space: nowrap;
+}
+
+/* ==================================================
+   FILTROS DA COLEÇÃO
+================================================== */
+
+.filtros-colecao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.grupo-filtros {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.botao-filtro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 11px 18px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--cartao);
+  color: var(--texto-secundario);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.botao-filtro:hover {
+  transform: translateY(-2px);
+  border-color: var(--destaque);
+  color: var(--texto);
+}
+
+.botao-filtro.ativo {
+  border-color: var(--destaque);
+  background: var(--destaque);
+  color: #17121f;
+}
+
+.botao-filtro:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+.contador-filtro {
+  display: inline;
+  min-width: auto;
+  height: auto;
+  margin-left: 2px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--destaque);
+  font-size: inherit;
+  font-weight: 800;
+}
+
+.botao-filtro.ativo .contador-filtro {
+  background: transparent;
+  color: #8a621c;
+}
+
+.botao-nova-criatura {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* ==================================================
+   GRADE DE CRIATURAS
+================================================== */
+
+.grade-criaturas,
+.grade-criaturas-pessoal {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 240px), 240px)
+  );
+  align-items: stretch;
+  justify-content: start;
+  gap: 22px;
+}
+
+/* ==================================================
+   CARTÕES DAS CRIATURAS
+================================================== */
+
+.cartao-criatura {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 390px;
+  margin: 0;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: var(--cartao);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.cartao-criatura:hover {
+  transform: translateY(-5px);
+  border-color: var(--destaque);
+  box-shadow: 0 8px 24px rgba(216, 180, 106, 0.12);
+}
+
+/* ==================================================
+   RARIDADE DAS CRIATURAS
+================================================== */
+
+.cartao-criatura .raridade {
+  align-self: flex-start;
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #30293d;
+  color: var(--texto);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.cartao-criatura .raridade.lendaria {
+  color: #f5cf72;
+}
+
+.cartao-criatura .raridade.epica {
+  color: #c6a5ff;
+}
+
+.cartao-criatura .raridade.rara {
+  color: #8bd8f4;
+}
+
+/* ==================================================
+   ILUSTRAÇÕES DOS CARTÕES
+================================================== */
+
+.cartao-criatura .ilustracao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  flex-shrink: 0;
+  height: 100px;
+  margin: 18px 0;
+  font-size: 5rem;
+}
+
+/* ==================================================
+   INFORMAÇÕES DOS CARTÕES
+================================================== */
+
+.cartao-criatura h3 {
+  flex-shrink: 0;
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.cartao-criatura p {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  margin: 0;
+  color: var(--texto-secundario);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #51485f transparent;
+}
+
+.cartao-criatura .origem {
+  flex-shrink: 0;
+  margin-top: 12px;
+}
+
+/* ==================================================
+   BOTÃO DE DETALHES DOS CARTÕES
+================================================== */
+
+.cartao-criatura .botao-detalhes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 10px 16px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--destaque);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.cartao-criatura .botao-detalhes:hover {
+  border-color: var(--destaque);
+  background: var(--destaque);
+  color: #17121f;
+}
+
+/* ==================================================
+   FORMULÁRIO DE CADASTRO E EDIÇÃO
+================================================== */
+
+.formulario-criatura {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  margin: 30px auto 35px;
+  padding: 28px;
+  box-sizing: border-box;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: var(--cartao);
+  color: var(--texto);
+}
+
+.formulario-criatura > header {
+  margin-bottom: 24px;
+}
+
+.formulario-criatura > header h2 {
+  margin: 0 0 10px;
+  color: var(--texto);
+}
+
+.formulario-criatura > header p {
+  margin: 0;
+  color: var(--texto-secundario);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   CAMPOS DO FORMULÁRIO
+================================================== */
+
+.formulario-criatura > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px 0;
+  color: var(--texto);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.formulario-criatura > input,
+.formulario-criatura > textarea,
+.formulario-criatura > select,
+.formulario-criatura fieldset input:not([type="range"]),
+.formulario-criatura fieldset textarea,
+.formulario-criatura fieldset select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #100e18;
+  color: var(--texto);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.formulario-criatura input::placeholder,
+.formulario-criatura textarea::placeholder {
+  color: var(--texto-secundario);
+}
+
+.formulario-criatura input:focus,
+.formulario-criatura textarea:focus,
+.formulario-criatura select:focus {
+  outline: 2px solid var(--destaque);
+  outline-offset: 2px;
+}
+
+.formulario-criatura textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.formulario-criatura input[type="range"] {
+  width: 100%;
+  accent-color: var(--destaque);
+  cursor: pointer;
+}
+
+/* ==================================================
+   SEÇÕES DO FORMULÁRIO
+================================================== */
+
+.formulario-criatura fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+  margin: 24px 0;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+
+.formulario-criatura fieldset legend {
+  padding: 0 8px;
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.formulario-criatura fieldset > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: var(--texto);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.formulario-criatura fieldset > p {
+  margin: 0 0 8px;
+  color: var(--texto-secundario);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   PERSONALIDADE E CARACTERÍSTICAS
+================================================== */
+
+.formulario-criatura fieldset input[type="range"] {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 8px 0;
+  padding: 0;
+  accent-color: var(--destaque);
+  cursor: pointer;
+}
+
+/* ==================================================
+   BOTÕES DO FORMULÁRIO
+================================================== */
+
+.acoes-formulario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--borda);
+}
+
+/* Botão de cadastrar ou salvar */
+.formulario-criatura .acoes-formulario .botao-principal,
+.formulario-criatura .acoes-formulario button[type="submit"],
+.formulario-criatura button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 22px;
+  border: 1px solid var(--destaque);
+  border-radius: 8px;
+  background: var(--destaque);
+  color: #17121f;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.formulario-criatura .acoes-formulario .botao-principal:hover,
+.formulario-criatura .acoes-formulario button[type="submit"]:hover,
+.formulario-criatura button[type="submit"]:hover {
+  border-color: var(--destaque);
+  background: var(--destaque);
+  color: #17121f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(216, 180, 106, 0.2);
+}
+
+.formulario-criatura .acoes-formulario .botao-principal:focus-visible,
+.formulario-criatura .acoes-formulario button[type="submit"]:focus-visible,
+.formulario-criatura button[type="submit"]:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 4px;
+}
+
+/* Botão cancelar */
+.botao-cancelar {
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--texto);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.botao-cancelar:hover {
+  border-color: var(--destaque);
+  color: var(--destaque);
+}
+
+/* ==================================================
+   RODAPÉ DA APLICAÇÃO
+================================================== */
+
+.rodape {
+  padding: 25px 7%;
+  border-top: 1px solid var(--borda);
+  color: var(--texto-secundario);
+  text-align: center;
+}
+
+/* ==================================================
+   JANELA DE DETALHES
+================================================== */
+
+.painel-detalhes-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+}
+
+.painel-detalhes {
+  width: 100%;
+  max-width: 650px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 28px;
+  box-sizing: border-box;
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  color: var(--texto);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  scrollbar-width: thin;
+  scrollbar-color: #51485f transparent;
+}
+
+.painel-detalhes::-webkit-scrollbar {
+  width: 5px;
+}
+
+.painel-detalhes::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.painel-detalhes::-webkit-scrollbar-thumb {
+  background: #51485f;
+  border-radius: 10px;
+}
+
+.painel-detalhes::-webkit-scrollbar-thumb:hover {
+  background: var(--destaque);
+}
+
+/* ==================================================
+   CABEÇALHO DOS DETALHES
+================================================== */
+
+.painel-detalhes > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.painel-detalhes > header h2 {
+  margin: 10px 0 0;
+}
+
+/* ==================================================
+   BOTÃO DE FECHAR DETALHES
+================================================== */
+
+.botao-fechar-detalhes {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--texto);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.botao-fechar-detalhes:hover {
+  color: var(--destaque);
+  border-color: var(--destaque);
+}
+
+/* ==================================================
+   CONTEÚDO DOS DETALHES
+================================================== */
+
+.conteudo-detalhes {
+  padding: 20px 0;
+}
+
+.conteudo-detalhes > .ilustracao {
+  display: block;
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+.conteudo-detalhes > h3 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.conteudo-detalhes > p {
+  color: var(--texto-secundario);
+  line-height: 1.7;
+}
+
+/* ==================================================
+   LISTA DE INFORMAÇÕES DA CRIATURA
+================================================== */
+
+.lista-detalhes {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) 2fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.lista-detalhes dt {
+  color: var(--texto-secundario);
+}
+
+.lista-detalhes dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ==================================================
+   BOTÃO DE REMOVER CRIATURA
+================================================== */
+
+.botao-remover {
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 1px solid #a94444;
+  border-radius: 8px;
+  background: transparent;
+  color: #e57373;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.botao-remover:hover {
+  border-color: #e57373;
+  background: #a94444;
+  color: #ffffff;
+}
+
+.botao-remover:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+/* ==================================================
+   BOTÕES DA JANELA DE DETALHES
+   Mantém a configuração solicitada.
+================================================== */
+
+.painel-detalhes > footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--borda);
+}
+
+/* Aparência padrão dos botões */
+.painel-detalhes > footer button,
+.painel-detalhes > footer .botao-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 175px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--texto);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+/* Adicionar à coleção */
+.painel-detalhes > footer button:first-child {
+  border-color: var(--destaque);
+  background: var(--destaque);
+  color: #17121f;
+}
+
+/* Efeito ao passar o mouse */
+.painel-detalhes > footer button:hover,
+.painel-detalhes > footer .botao-principal:hover {
+  transform: translateY(-2px);
+  border-color: var(--destaque);
+  box-shadow: 0 4px 12px rgba(216, 180, 106, 0.12);
+}
+
+/* Mantém o botão principal dourado */
+.painel-detalhes > footer button:first-child:hover {
+  background: var(--destaque);
+  color: #17121f;
+}
+
+/* Botão de editar */
+.painel-detalhes > footer button:not(.botao-remover):not(:first-child):hover {
+  color: var(--destaque);
+}
+
+/* Botão de remover */
+.painel-detalhes > footer .botao-remover {
+  border-color: #a94444;
+  background: transparent;
+  color: #e57373;
+}
+
+.painel-detalhes > footer .botao-remover:hover {
+  border-color: #e57373;
+  background: #a94444;
+  color: #ffffff;
+}
+
+/* Acessibilidade */
+.painel-detalhes > footer button:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 760px) {
+  .formulario-criatura {
+    padding: 22px;
+  }
+
+  .formulario-criatura fieldset {
+    padding: 18px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cabecalho {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .cabecalho nav {
+    order: 3;
+    width: 100%;
+    gap: 18px;
+  }
+
+  .apresentacao {
+    padding: 75px 20px;
+  }
+
+  .titulo-secao {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .colecao {
+    padding: 30px 20px 60px;
+  }
+
+  .filtros-colecao {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .grupo-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .botao-filtro {
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .botao-nova-criatura {
+    align-self: flex-end;
+    margin-left: 0;
+  }
+
+  .grade-criaturas,
+  .grade-criaturas-pessoal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cartao-criatura {
+    width: 100%;
+    height: 390px;
+  }
+
+  .formulario-criatura {
+    padding: 20px;
+  }
+
+  .formulario-criatura fieldset {
+    padding: 16px 12px;
+  }
+
+  .acoes-formulario {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .acoes-formulario button,
+  .acoes-formulario .botao-principal {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .painel-detalhes {
+    padding: 20px;
+  }
+
+  .lista-detalhes {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .lista-detalhes dd {
+    margin-bottom: 12px;
+  }
+
+  /* Botões da janela em coluna no celular */
+  .painel-detalhes > footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .painel-detalhes > footer button,
+  .painel-detalhes > footer .botao-principal {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario-criatura {
+    padding: 16px;
+  }
+}
+
+/* Imagem personalizada no formulário de criaturas */
+.previa-imagem-criatura {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0;
+  padding: 20px;
+  border: 1px solid rgba(192, 151, 83, 0.35);
+  border-radius: 14px;
+  background: rgba(15, 18, 38, 0.55);
+}
+
+.previa-imagem-criatura p {
+  margin: 0;
+  color: #d7c9a8;
+}
+
+.imagem-personalizada-previa {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.icone-criatura-previa {
+  display: grid;
+  width: 180px;
+  height: 180px;
+  place-items: center;
+  font-size: 100px;
+}
+
+/* Imagem personalizada no painel de detalhes */
+.imagem-detalhes-criatura {
+  display: block;
+  width: min(100%, 320px);
+  height: 280px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  border-radius: 16px;
+}
+
+/* Animação de ativação do poder */
+.painel-detalhes.animacao-poder {
+  animation: ativar-poder 2.5s ease-in-out;
+}
+
+@keyframes ativar-poder {
+  0% {
+    box-shadow: 0 0 0 rgba(160, 100, 255, 0);
+    transform: scale(1);
+  }
+
+  35% {
+    box-shadow:
+      0 0 25px rgba(160, 100, 255, 0.7),
+      0 0 55px rgba(192, 151, 83, 0.35);
+    transform: scale(1.015);
+  }
+
+  65% {
+    box-shadow:
+      0 0 40px rgba(160, 100, 255, 0.5),
+      0 0 70px rgba(192, 151, 83, 0.2);
+    transform: scale(1.01);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(160, 100, 255, 0);
+    transform: scale(1);
+  }
+}
+
+.painel-detalhes.animacao-poder.fogo {
+  animation-name: ativar-fogo;
+}
+
+@keyframes ativar-fogo {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(255, 100, 0, 0);
+  }
+
+  35% {
+    box-shadow:
+      0 0 35px rgba(255, 100, 0, 0.8),
+      0 0 65px rgba(255, 180, 0, 0.4);
+  }
+}
+
+.painel-detalhes.animacao-poder.gelo {
+  animation-name: ativar-gelo;
+}
+
+@keyframes ativar-gelo {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(100, 200, 255, 0);
+  }
+
+  35% {
+    box-shadow:
+      0 0 35px rgba(100, 200, 255, 0.8),
+      0 0 65px rgba(160, 220, 255, 0.4);
+  }
+}
+
+.painel-detalhes.animacao-poder.cura {
+  animation-name: ativar-cura;
+}
+
+@keyframes ativar-cura {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+  }
+
+  35% {
+    box-shadow:
+      0 0 35px rgba(255, 215, 0, 0.8),
+      0 0 65px rgba(255, 240, 150, 0.4);
+  }
+}
+
+.mensagem-poder {
+  text-align: center;
+  color: #d7c9a8;
+  font-weight: 600;
+  animation: aparecer-mensagem-poder 0.4s ease-out;
+}
+
+@keyframes aparecer-mensagem-poder {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Ajustes da imagem nos cartões de criaturas */
+.cartao-criatura .imagem-cartao-criatura {
+  width: calc(100% - 30px);
+  height: 165px;
+  margin: 0 15px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+/* Mais espaço entre a imagem e o nome */
+.cartao-criatura .imagem-cartao-criatura + h3 {
+  margin-top: 16px;
+}
+/* Espaçamento da raridade no cartão */
+.cartao-criatura .raridade {
+  margin-bottom: 12px;
+}
+
+/* Botão Usar poder especial - tema Mytos */
+.botao-poder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 22px;
+
+  background: linear-gradient(
+    135deg,
+    #241b35,
+    #352447
+  );
+
+  color: #f4c56a;
+  border: 1px solid rgba(244, 197, 106, 0.65);
+  border-radius: 12px;
+
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Efeito ao passar o mouse */
+@media (hover: hover) and (pointer: fine) {
+  .botao-poder:hover:not(:disabled) {
+    background: linear-gradient(
+      135deg,
+      #352447,
+      #49305f
+    );
+
+    border-color: #f4c56a;
+
+    box-shadow:
+      0 0 12px rgba(244, 197, 106, 0.2),
+      0 0 24px rgba(160, 100, 255, 0.15);
+
+    transform: translateY(-2px);
+  }
+}
+
+/* Efeito ao clicar */
+.botao-poder:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* Aparência durante a ativação do poder */
+.botao-poder.poder-ativo {
+  background: linear-gradient(
+    135deg,
+    #49305f,
+    #6b4388
+  );
+
+  border-color: #ffe3a0;
+  color: #fff0c9;
+
+  box-shadow:
+    0 0 12px rgba(244, 197, 106, 0.35),
+    0 0 25px rgba(160, 100, 255, 0.25);
+
+  cursor: wait;
+}
+
+/* Acessibilidade: foco pelo teclado */
+.botao-poder:focus-visible {
+  outline: 2px solid #f4c56a;
+  outline-offset: 4px;
+}
+
+/* Botão desativado */
+.botao-poder:disabled {
+  opacity: 0.9;
+  cursor: wait;
+}
+
+/* =========================================
+   EFEITOS ELEMENTAIS EM TELA CHEIA — MYTOS
+   ========================================= */
+
+.painel-detalhes-fundo.animacao-tela-cheia {
+  isolation: isolate;
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia::before,
+.painel-detalhes-fundo.animacao-tela-cheia::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.ativa::before {
+  animation: explosao-elemental 2.5s ease-out both;
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.ativa::after {
+  animation: aura-tela-elemental 2.5s ease-in-out both;
+}
+
+.painel-detalhes {
+  position: relative;
+  z-index: 2;
+}
+
+/* FOGO */
+
+.painel-detalhes-fundo.animacao-tela-cheia.fogo::before {
+  background:
+    radial-gradient(
+      ellipse at 50% 65%,
+      rgba(255, 85, 0, 0.48),
+      transparent 60%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(255, 45, 0, 0.28),
+      transparent 75%
+    );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.fogo::after {
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(255, 125, 0, 0.3),
+      transparent 65%
+    );
+}
+
+/* GELO */
+
+.painel-detalhes-fundo.animacao-tela-cheia.gelo::before {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(130, 225, 255, 0.4),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(30, 150, 255, 0.2),
+      rgba(210, 250, 255, 0.12)
+    );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.gelo::after {
+  background: radial-gradient(
+    circle,
+    transparent 35%,
+    rgba(80, 200, 255, 0.22) 100%
+  );
+}
+
+/* RAIO */
+
+.painel-detalhes-fundo.animacao-tela-cheia.raio::before {
+  background:
+    linear-gradient(
+      110deg,
+      transparent 25%,
+      rgba(145, 100, 255, 0.28) 48%,
+      transparent 53%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(100, 180, 255, 0.35),
+      transparent 65%
+    );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.raio::after {
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 30%,
+    rgba(130, 80, 255, 0.25) 100%
+  );
+}
+
+/* NATUREZA */
+
+.painel-detalhes-fundo.animacao-tela-cheia.natureza::before {
+  background:
+    radial-gradient(
+      ellipse at 50% 65%,
+      rgba(60, 255, 110, 0.28),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(30, 160, 70, 0.22),
+      transparent 75%
+    );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.natureza::after {
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 35%,
+    rgba(100, 255, 130, 0.22) 100%
+  );
+}
+
+/* ENERGIA MÁGICA */
+
+.painel-detalhes-fundo.animacao-tela-cheia.arcano::before {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(160, 80, 255, 0.42),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(100, 50, 200, 0.22),
+      rgba(50, 40, 150, 0.18)
+    );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.arcano::after {
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    rgba(160, 100, 255, 0.25) 100%
+  );
+}
+
+/* CURA */
+
+.painel-detalhes-fundo.animacao-tela-cheia.cura::before {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(130, 255, 170, 0.38),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 220, 100, 0.18),
+      transparent 70%
+    );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.cura::after {
+  background: radial-gradient(
+    circle,
+    transparent 35%,
+    rgba(100, 255, 150, 0.2) 100%
+  );
+}
+
+/* SOMBRAS */
+
+.painel-detalhes-fundo.animacao-tela-cheia.sombras::before {
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(90, 20, 150, 0.3),
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(15, 5, 30, 0.7),
+      rgba(100, 30, 160, 0.22)
+    );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.sombras::after {
+  background: radial-gradient(
+    circle,
+    transparent 25%,
+    rgba(30, 0, 50, 0.6) 100%
+  );
+}
+
+/* IMPACTO */
+
+.painel-detalhes-fundo.animacao-tela-cheia.impacto::before {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 220, 160, 0.5),
+    transparent 65%
+  );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.impacto::after {
+  background: radial-gradient(
+    circle,
+    transparent 25%,
+    rgba(255, 180, 80, 0.28) 100%
+  );
+}
+
+/* PADRÃO */
+
+.painel-detalhes-fundo.animacao-tela-cheia.padrao::before {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(180, 150, 255, 0.38),
+    transparent 65%
+  );
+}
+
+.painel-detalhes-fundo.animacao-tela-cheia.padrao::after {
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    rgba(150, 100, 255, 0.2) 100%
+  );
+}
+
+/* MOVIMENTO DOS EFEITOS */
+
+@keyframes explosao-elemental {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  65% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes aura-tela-elemental {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+
+  80% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Respeita a preferência por menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+  .painel-detalhes-fundo.animacao-tela-cheia::before,
+  .painel-detalhes-fundo.animacao-tela-cheia::after {
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   PARTÍCULAS MÁGICAS — MYTOS
+========================================= */
+
+.painel-detalhes-fundo.animacao-tela-cheia.ativa {
+  overflow: hidden;
+}
+
+/* Camada das partículas */
+.painel-detalhes-fundo.animacao-tela-cheia.ativa
+  .particulas-magicas {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Aparência de cada partícula */
+.particula-magica {
+  position: absolute;
+  bottom: -30px;
+  left: var(--posicao-x);
+  width: var(--tamanho);
+  height: var(--tamanho);
+  border-radius: 50%;
+  background: var(--cor-particula);
+  box-shadow:
+    0 0 8px var(--cor-particula),
+    0 0 18px var(--cor-particula);
+  opacity: 0;
+  animation: subir-particula var(--duracao) ease-out forwards;
+  animation-delay: var(--atraso);
+}
+
+/* Partículas em formato de estrela */
+.particula-magica.estrela {
+  width: var(--tamanho);
+  height: var(--tamanho);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.particula-magica.estrela::before {
+  content: "✦";
+  position: absolute;
+  inset: -8px;
+  color: var(--cor-particula);
+  font-size: calc(var(--tamanho) * 2);
+  text-shadow: 0 0 10px var(--cor-particula);
+}
+
+/* Movimento das partículas */
+@keyframes subir-particula {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.3) rotate(0deg);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate3d(var(--movimento-x), -110vh, 0)
+      scale(1.4)
+      rotate(360deg);
+  }
+}
+
+/* Cores de acordo com o poder */
+.painel-detalhes-fundo.fogo {
+  --cor-particula: #ff792e;
+}
+
+.painel-detalhes-fundo.gelo {
+  --cor-particula: #9beaff;
+}
+
+.painel-detalhes-fundo.raio {
+  --cor-particula: #a88aff;
+}
+
+.painel-detalhes-fundo.natureza {
+  --cor-particula: #70ff91;
+}
+
+.painel-detalhes-fundo.arcano {
+  --cor-particula: #d19aff;
+}
+
+.painel-detalhes-fundo.cura {
+  --cor-particula: #ffe58a;
+}
+
+.painel-detalhes-fundo.sombras {
+  --cor-particula: #9a55d9;
+}
+
+.painel-detalhes-fundo.impacto {
+  --cor-particula: #ffbd73;
+}
+
+.painel-detalhes-fundo.padrao {
+  --cor-particula: #d6b5ff;
+}
+
+/* Respeita a preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .particula-magica {
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ==================================================
+   RECURSOS FINAIS: PAINEL, PESQUISA, FAVORITOS E CUIDADOS
+================================================== */
+
+.painel-resumo {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0 22px;
+}
+
+.painel-resumo article {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: var(--cartao);
+}
+
+.painel-resumo strong {
+  color: var(--destaque);
+  font-size: 1.8rem;
+}
+
+.painel-resumo span {
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+.filtros-avancados {
+  display: grid;
+  grid-template-columns: minmax(220px, 2fr) minmax(160px, 1fr) minmax(160px, 1fr) minmax(180px, 1fr);
+  align-items: end;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: rgba(25, 21, 35, 0.7);
+}
+
+.campo-filtro {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.filtros-avancados label {
+  display: block;
+  color: var(--texto-secundario);
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.filtros-avancados input,
+.filtros-avancados select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #100e18;
+  color: var(--texto);
+}
+
+.filtros-avancados input:focus-visible,
+.filtros-avancados select:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 2px;
+}
+
+.filtros-avancados button {
+  min-height: 44px;
+}
+
+.status-criatura {
+  display: inline-flex;
+  align-self: center;
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+}
+
+.status-disponível {
+  border-color: rgba(112, 220, 150, 0.45);
+  color: #8ee5ad;
+}
+
+.botao-favorita-cartao {
+  margin-top: auto;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--destaque);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao-favorita-cartao:hover {
+  border-color: var(--destaque);
+}
+
+.acoes-cuidado {
+  margin: 22px 0;
+  padding: 18px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: rgba(25, 21, 35, 0.75);
+}
+
+.acoes-cuidado h3,
+.acoes-cuidado p {
+  margin-top: 0;
+}
+
+.acoes-cuidado p {
+  color: var(--texto-secundario);
+}
+
+.botoes-cuidado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botoes-cuidado button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.botoes-cuidado button:hover:not(:disabled) {
+  border-color: var(--destaque);
+  color: var(--destaque);
+}
+
+.botoes-cuidado button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 950px) {
+  .filtros-avancados {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .painel-resumo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filtros-avancados {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .botoes-cuidado {
+    flex-direction: column;
+  }
+
+  .botoes-cuidado button {
+    width: 100%;
+  }
+}
